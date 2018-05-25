@@ -1,7 +1,7 @@
 {
     "name": "electronautoupdate",
-    "version": "0.1.10",
-    "author": "ZaninAndrea",
+    "version": "0.4.4",
+    "author": "liujun",
     "homepage": "./",
     "description": "An example of an autoupdating electron app",
     "repository": "https://github.com/Align1993/electron-autoUpdate",
