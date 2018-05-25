@@ -10,12 +10,17 @@
 
         // wait for an updateReady message
         ipcRenderer.on('updateReady', function(event, text) {
+            alert('updateReady!')
             // changes the text of the button
             var container = document.getElementById('ready');
             container.innerHTML = "new version ready!";
         })
+        ipcRenderer.send('get-app-version')
+        ipcRenderer.on('got-app-version', function (event, version) {
+          document.getElementById('version').innerHTML = version
+      })
     </script>
-    Version: <span id="version">v0.1.10</span>
+    Version: <span id="version"></span>
     <!-- the button onClick sends a quitAndInstall message to the electron main process -->
     <button id="ready" onClick="ipcRenderer.send('quitAndInstall')">no updates ready</button>
 

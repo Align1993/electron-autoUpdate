@@ -20,3 +20,6 @@ app.on('ready', function() {
 ipcMain.on("quitAndInstall", (event, arg) => {
     autoUpdater.quitAndInstall();
 })
+ipcMain.on('get-app-version', (event) => {
+  event.sender.send('got-app-version', app.getVersion())
+})
